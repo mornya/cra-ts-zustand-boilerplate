@@ -1,26 +1,71 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "moduleDetection": "force",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "types": [
+      "jest",
+      "node",
+      "react",
+      "react-dom",
+      "webpack-env"
+    ],
     "lib": [
+      "esnext",
+      "esnext.asynciterable",
       "dom",
       "dom.iterable",
-      "esnext"
+      "scripthost"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "~/*": [
+        "./*"
+      ]
+    },
+    "baseUrl": ".",
+    "outDir": "./dist/",
+    "jsx": "react-jsx",
+    "declaration": false,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "downlevelIteration": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "sourceMap": false,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": false,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "isolatedModules": true,
+    "incremental": true
   },
   "include": [
-    "src"
+    "src/**/*",
+    "test/**/*",
+    "types/**/*"
+  ],
+  "exclude": [
+    ".git",
+    ".husky",
+    ".idea",
+    ".vscode",
+    "coverage",
+    "dist",
+    "public",
+    "src/assets"
   ]
 }
